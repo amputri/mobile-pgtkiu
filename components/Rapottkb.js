@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { AuthContext } from '../assets/AuthContext';
 import { View, Text, Modal, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { Divider, Paragraph } from 'react-native-paper';
-import { link, komentarCapaian, surah, jilid, nilaiHuruf } from '../assets/axios/Link';
+import { link, komentarCapaian, surah, jilid, komentarHuruf } from '../assets/axios/Link';
 
 const Rapottkb = () => {
     const [visiblePerkembangan, setVisiblePerkembangan] = useState(false);
@@ -445,11 +445,11 @@ const Rapottkb = () => {
                                                     <View style={{ flexDirection: 'row' }}>
                                                         <View style={{ flex: 1, borderWidth: 1, padding: 3, justifyContent: 'center', alignItems: 'center' }}>
                                                             <Text style={{ fontStyle: 'italic', textDecorationLine: 'underline' }}>Semester 1</Text>
-                                                            <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{nilaiHuruf[nilaiCapaianSatu[nilaiCapaianSatu.map(item => item.idsubcapaian).indexOf(val4.id)]?.nilai - 1]}</Text>
+                                                            <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{komentarHuruf[nilaiCapaianSatu[nilaiCapaianSatu.map(item => item.idsubcapaian).indexOf(val4.id)]?.nilai - 1]}</Text>
                                                         </View>
                                                         <View style={{ flex: 1, borderWidth: 1, padding: 3, justifyContent: 'center', alignItems: 'center' }}>
                                                             <Text style={{ fontStyle: 'italic', textDecorationLine: 'underline' }}>Semester 2</Text>
-                                                            <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{nilaiHuruf[nilaiCapaianDua[nilaiCapaianDua.map(item => item.idsubcapaian).indexOf(val4.id)]?.nilai - 1]}</Text>
+                                                            <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{komentarHuruf[nilaiCapaianDua[nilaiCapaianDua.map(item => item.idsubcapaian).indexOf(val4.id)]?.nilai - 1]}</Text>
                                                         </View>
                                                     </View>
                                                 </View>
@@ -470,11 +470,11 @@ const Rapottkb = () => {
                                                                 <View style={{ flexDirection: 'row' }}>
                                                                     <View style={{ flex: 1, borderWidth: 1, padding: 3, justifyContent: 'center', alignItems: 'center' }}>
                                                                         <Text style={{ fontStyle: 'italic', textDecorationLine: 'underline' }}>Semester 1</Text>
-                                                                        <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{nilaiHuruf[nilaiCapaianSatu[nilaiCapaianSatu.map(item => item.idsubcapaian).indexOf(val5.id)]?.nilai - 1]}</Text>
+                                                                        <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{komentarHuruf[nilaiCapaianSatu[nilaiCapaianSatu.map(item => item.idsubcapaian).indexOf(val5.id)]?.nilai - 1]}</Text>
                                                                     </View>
                                                                     <View style={{ flex: 1, borderWidth: 1, padding: 3, justifyContent: 'center', alignItems: 'center' }}>
                                                                         <Text style={{ fontStyle: 'italic', textDecorationLine: 'underline' }}>Semester 2</Text>
-                                                                        <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{nilaiHuruf[nilaiCapaianDua[nilaiCapaianDua.map(item => item.idsubcapaian).indexOf(val5.id)]?.nilai - 1]}</Text>
+                                                                        <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{komentarHuruf[nilaiCapaianDua[nilaiCapaianDua.map(item => item.idsubcapaian).indexOf(val5.id)]?.nilai - 1]}</Text>
                                                                     </View>
                                                                 </View>
                                                             </View>
@@ -495,11 +495,11 @@ const Rapottkb = () => {
                                                                             <View style={{ flexDirection: 'row' }}>
                                                                                 <View style={{ flex: 1, borderWidth: 1, padding: 3, justifyContent: 'center', alignItems: 'center' }}>
                                                                                     <Text style={{ fontStyle: 'italic', textDecorationLine: 'underline' }}>Semester 1</Text>
-                                                                                    <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{nilaiHuruf[nilaiCapaianSatu[nilaiCapaianSatu.map(item => item.idsubcapaian).indexOf(val6.id)]?.nilai - 1]}</Text>
+                                                                                    <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{komentarHuruf[nilaiCapaianSatu[nilaiCapaianSatu.map(item => item.idsubcapaian).indexOf(val6.id)]?.nilai - 1]}</Text>
                                                                                 </View>
                                                                                 <View style={{ flex: 1, borderWidth: 1, padding: 3, justifyContent: 'center', alignItems: 'center' }}>
                                                                                     <Text style={{ fontStyle: 'italic', textDecorationLine: 'underline' }}>Semester 2</Text>
-                                                                                    <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{nilaiHuruf[nilaiCapaianDua[nilaiCapaianDua.map(item => item.idsubcapaian).indexOf(val6.id)]?.nilai - 1]}</Text>
+                                                                                    <Text style={{ fontWeight: 'bold', textAlign: 'center' }}>{komentarHuruf[nilaiCapaianDua[nilaiCapaianDua.map(item => item.idsubcapaian).indexOf(val6.id)]?.nilai - 1]}</Text>
                                                                                 </View>
                                                                             </View>
                                                                         </View>
@@ -556,12 +556,12 @@ const Rapottkb = () => {
                                         <View style={{ flex: 1, borderWidth: 1, padding: 3, justifyContent: 'center', alignItems: 'center' }}>
                                             <Text style={{ fontStyle: 'italic', textDecorationLine: 'underline' }}>Semester 1</Text>
                                             <Text style={{ fontWeight: 'bold' }}>{jilid[capaianNgajiSatu?.jilid]}</Text>
-                                            <Text style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Nilai : {nilaiHuruf[capaianNgajiSatu?.nilaiummi - 1]}</Text>
+                                            <Text style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Nilai : {komentarHuruf[capaianNgajiSatu?.nilaiummi - 1]}</Text>
                                         </View>
                                         <View style={{ flex: 1, borderWidth: 1, padding: 3, justifyContent: 'center', alignItems: 'center' }}>
                                             <Text style={{ fontStyle: 'italic', textDecorationLine: 'underline' }}>Semester 2</Text>
                                             <Text style={{ fontWeight: 'bold' }}>{jilid[capaianNgajiDua?.jilid]}</Text>
-                                            <Text style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Nilai : {nilaiHuruf[capaianNgajiDua?.nilaiummi - 1]}</Text>
+                                            <Text style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Nilai : {komentarHuruf[capaianNgajiDua?.nilaiummi - 1]}</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -576,12 +576,12 @@ const Rapottkb = () => {
                                         <View style={{ flex: 1, borderWidth: 1, padding: 3, justifyContent: 'center', alignItems: 'center' }}>
                                             <Text style={{ fontStyle: 'italic', textDecorationLine: 'underline' }}>Semester 1</Text>
                                             <Text style={{ fontWeight: 'bold' }}>{surah[capaianNgajiSatu?.surah]}</Text>
-                                            <Text style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Nilai : {nilaiHuruf[capaianNgajiSatu?.nilaitahfidz - 1]}</Text>
+                                            <Text style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Nilai : {komentarHuruf[capaianNgajiSatu?.nilaitahfidz - 1]}</Text>
                                         </View>
                                         <View style={{ flex: 1, borderWidth: 1, padding: 3, justifyContent: 'center', alignItems: 'center' }}>
                                             <Text style={{ fontStyle: 'italic', textDecorationLine: 'underline' }}>Semester 2</Text>
                                             <Text style={{ fontWeight: 'bold' }}>{surah[capaianNgajiDua?.surah]}</Text>
-                                            <Text style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Nilai : {nilaiHuruf[capaianNgajiDua?.nilaitahfidz - 1]}</Text>
+                                            <Text style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Nilai : {komentarHuruf[capaianNgajiDua?.nilaitahfidz - 1]}</Text>
                                         </View>
                                     </View>
                                 </View>

@@ -126,3 +126,10 @@ export const nilaiHuruf = [
     "A",
     "A"
 ]
+
+export const komentarHuruf = [
+    "C (belum mecapai target, bimbingan dan motivasi sangat diperlukan)",
+    "B (mencapai target, bimbingan dan motivasi ditingkatkan)",
+    "A (melampaui target, pertahankan prestasi)",
+    "A (melampaui target, pertahankan prestasi)"
+]
